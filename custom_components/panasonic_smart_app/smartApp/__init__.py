@@ -178,6 +178,7 @@ class SmartApp(object):
                 status_codes = chunks(
                     status_code_mapping[device_type], COMMANDS_PER_REQUEST
                 )
+                status_codes = [status_code_mapping[device_type]]
                 device["status"] = {}
                 for codes in status_codes:
                     try:
