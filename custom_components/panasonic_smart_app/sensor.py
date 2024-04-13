@@ -269,10 +269,6 @@ class PanasonicEnergySensor(PanasonicBaseEntity, SensorEntity):
         return DEVICE_CLASS_ENERGY
 
     @property
-    def last_reset(self):
-        return datetime.today().replace(day=1)
-
-    @property
     def state(self) -> int:
         energy = self.coordinator.data[self.index]["energy"]
         _LOGGER.debug(f"[{self.label}] state: {energy}")
